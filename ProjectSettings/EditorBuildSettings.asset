@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Nearmint Studios/Mask Transitions/Demo/DemoScene_1.unity
+    guid: 87e765e27a0aeaf44aade69b8d897d3f
+  - enabled: 1
+    path: Assets/Nearmint Studios/Mask Transitions/Demo/DemoScene_2.unity
+    guid: ab6ff6575ce1b374dba4e0885c1fe774
   m_configObjects: {}
