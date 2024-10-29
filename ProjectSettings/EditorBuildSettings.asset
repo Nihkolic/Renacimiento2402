@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Escultura.unity
+    path: Assets/Scenes/dibujo.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
     path: Assets/Plugins/Nearmint Studios/Mask Transitions/Demo/DemoScene_1.unity

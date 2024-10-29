@@ -41,6 +41,15 @@
             {
                 PlayEndOfTransition();
             }
+
+            if (Input.GetKeyUp(KeyCode.Q))
+            {
+                SwitchScene();
+            }
+            if (Input.GetKeyUp(KeyCode.W))
+            {
+                SwitchScene();
+            }
         }
     }
 }

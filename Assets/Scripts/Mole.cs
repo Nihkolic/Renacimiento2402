@@ -31,7 +31,7 @@ public class Mole : MonoBehaviour
 
     // Mole Parameters 
     private bool hittable = true;
-    public enum MoleType { Standard, HardHat, Bomb };
+    public enum MoleType { Standard};
     private MoleType moleType;
     private float hardRate = 0.25f;
     private float bombRate = 0f;
@@ -84,7 +84,7 @@ public class Mole : MonoBehaviour
         {
             hittable = false;
             // We only give time penalty if it isn't a bomb.
-            gameManager.Missed(moleIndex, moleType != MoleType.Bomb);
+
         }
     }
 
@@ -123,28 +123,6 @@ public class Mole : MonoBehaviour
                     // Turn off hittable so that we can't keep tapping for score.
                     hittable = false;
                     break;
-                case MoleType.HardHat:
-                    // If lives == 2 reduce, and change sprite.
-                    if (lives == 2)
-                    {
-                        spriteRenderer.sprite = moleHatBroken;
-                        lives--;
-                    }
-                    else
-                    {
-                        spriteRenderer.sprite = moleHatHit;
-                        gameManager.AddScore(moleIndex);
-                        // Stop the animation
-                        StopAllCoroutines();
-                        StartCoroutine(QuickHide());
-                        // Turn off hittable so that we can't keep tapping for score.
-                        hittable = false;
-                    }
-                    break;
-                case MoleType.Bomb:
-                    // Game over, 1 for bomb.
-                    gameManager.GameOver(1);
-                    break;
                 default:
                     break;
             }
@@ -154,32 +132,16 @@ public class Mole : MonoBehaviour
     private void CreateNext()
     {
         float random = Random.Range(0f, 1f);
-        if (random < bombRate)
-        {
-            // Make a bomb.
-            moleType = MoleType.Bomb;
-            // The animator handles setting the sprite.
-            animator.enabled = true;
-        }
-        else
-        {
+
             animator.enabled = false;
             random = Random.Range(0f, 1f);
-            if (random < hardRate)
-            {
-                // Create a hard one.
-                moleType = MoleType.HardHat;
-                spriteRenderer.sprite = moleHardHat;
-                lives = 2;
-            }
-            else
-            {
+
                 // Create a standard one.
                 moleType = MoleType.Standard;
                 spriteRenderer.sprite = mole;
                 lives = 1;
-            }
-        }
+
+        
         // Mark as hittable so we can register an onclick event.
         hittable = true;
     }

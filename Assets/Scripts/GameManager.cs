@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
         playButton.SetActive(true);
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if (playing)

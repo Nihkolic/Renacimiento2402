@@ -50,7 +50,10 @@ namespace MaskTransitions
 
             SetupMaxSize();
         }
+        private void Update()
+        {
 
+        }
         #region Setup
         void SetupMaxSize()
         {
